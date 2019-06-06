@@ -1,9 +1,12 @@
-function getUsers(searchString, onSuccess) {
-    var requestUrl = 'https://api.github.com/search/users?q=' + searchString;
+function getUsers(searchString) {
+    const baseUrl = `https://api.github.com/search/users?q=`;
+    const requestUrl = `${baseUrl}${searchString}`;
+    return fetch(requestUrl)
+        .then(response => response.json())
+        .then((data) => {
+            return data.items
 
-    $.get(requestUrl, function (data) {
-        onSuccess(data.items);
-    })
+        })
 }
 
 function getRepositories(user, onSuccess) {
