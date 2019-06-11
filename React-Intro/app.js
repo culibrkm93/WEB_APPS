@@ -623,37 +623,39 @@ const userPosts = [
 
 
 const Header = () => {
-    return <h3>Posts</h3>
+    return <h3 className="header">My React Blog</h3>
 }
+const PostItem = (props) => {
+    return (<div className="actual-post">
+        <h5>{props.title}</h5>
+        <p>{props.body}</p>
 
-const Posts = () => {
+    </div>)
+}
+const Posts = (props) => {
     return (
         <div className="post">
-            {userPosts.map((post, i) => <div key={i}>
-                <h5>{post.title}</h5>
-                <p>{post.body}</p>
-                <hr />
-            </div>)}
+            {props.listOfPosts.map((post) => <PostItem title={post.title} body={post.body} />)}
         </div>
     )
 }
 
 const Footer = () => {
-    return <h3>Comi Losmi</h3>
+    return <h3 className="footer">Comi Losmi</h3>
 }
 
 
-const App = () => {
+const App = (props) => {
     return (
         <div>
             <Header />
-            <Posts />
+            <Posts listOfPosts={props.data} />
             <Footer />
         </div>
     )
 };
 
-ReactDOM.render(<App />, document.querySelector('.root'));
+ReactDOM.render(<App data={userPosts} />, document.querySelector('.root'));
 
 
 

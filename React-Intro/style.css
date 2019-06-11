@@ -1,13 +1,41 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+body{
+    margin: 0;
+    padding:0;
+}
+
 h3{
     text-align: center;
     font-size: 30px;
-    font-weight: 800;
+    font-weight: 400;
+    margin-top: 0;
+    
 }
 .post{
     width: 80%;
     margin: 0 auto;
+    color: white;
+   
+}
+.actual-post{
+    background-color: #556e79;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 5px 0px rgba(140,140,140,1);
 }
 
 h5,p {
     text-transform: capitalize;
+}
+
+.header {
+    background-color: #ec6f75;
+    color: white;
+    padding: 15px;
+    box-shadow: 0px 4px 5px 0px rgba(140,140,140,1);
+    
 }
